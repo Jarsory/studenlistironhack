@@ -9,9 +9,19 @@ router.get('/martha', (req, res, next) => {
 router.get('/horacio', (req, res, next) => {
   res.render('horacio');
 });
-router.post('/newStudent', (req, res, next) => {
-  let {name, age} = req.body;
-  
+
+router.post('/newStudent', ( req,res,next ) => {
+  let { name, age } = req.body;
+  // let name = req.body.name;
+  Student.create( req.body )
+  .then( resp => {
+    console.log( resp );
+    console.log('Chido');
+  })
+  .catch( err => {
+    console.log( err );
+  })
+  res.send('Chidisimo')
 });
 
 module.exports = router;

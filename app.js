@@ -11,7 +11,7 @@ const path         = require('path');
 const student = require('path');
 
 mongoose
-  .connect('mongodb://localhost/students', {useNewUrlParser: true})
+  .connect('mongodb+srv://admin:ironhack2019@cluster0-rxls2.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
